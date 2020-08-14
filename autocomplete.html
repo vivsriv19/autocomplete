@@ -17,55 +17,14 @@ ul.autocompleteOutput{padding:0;width:202px;font-size:14px;float:none;margin:0 a
 <body>
 <form action="http://google.com" method="post">
 <div id="autocomplete-container">  
-  <input type="text" autofocus="true" name="autofocus sample" placeholder="Enter VPA handle" class="autocompleteField" id="autocomplete-input"></input>
-
-  <br><br><br><br>
+  
     <input type="text" autofocus="true" name="autofocus sample" placeholder="Enter VPA handle" class="autocompleteField" id="autocompleteInput"></input>
 </div>
 </form>
 </body>
 <script type="text/javascript">
-//variables
 
-//var people = ['allbank','andb','axisbank','barodampay','mahb','cnrb','csbpay','centralbank','dbs','dcb','denabank','federal','hdfcbank','hsbc','icici','idbi','idfcbank','indianbank','indus','kbl','kvb','kaypay','lvb','obc','pnb','rbl','sib','scb','sbi','syndicate','tjsb','uco','unionbank','united','vijb','ybl','upi','pingpay','imobile','kotak'];
 var handles = '["allbank","andb","axisbank","barodampay","mahb","cnrb","csbpay","centralbank","dbs","dcb","denabank","federal","hdfcbank","hsbc","icici","idbi","idfcbank","indianbank","indus","kbl","kvb","kaypay","lvb","obc","pnb","rbl","sib","scb","sbi","syndicate","tjsb","uco","unionbank","united","vijb","ybl","upi","pingpay","imobile","kotak"]';
-/* var input = document.querySelector('input');
-var results;
-
-
-function autocomplete(val) {
-  var people_return = [];
-
-  for (i = 0; i < people.length; i++) {	
-    if (val === people[i].slice(0, val.length)) {
-      people_return.push(people[i]);
-    }
-  }
-
-  return people_return;
-}
-
-// events
-input.onkeyup = function(e) {
-  input_val = this.value; // updates the variable on each ocurrence
-
-  if (input_val.length > 0) {
-    var people_to_show = [];
-
-    autocomplete_results = document.getElementById("autocomplete-results");
-    autocomplete_results.innerHTML = '';
-    people_to_show = autocomplete(input_val);
-    
-    for (i = 0; i < people_to_show.length; i++) {
-      autocomplete_results.innerHTML += '<li>' + people_to_show[i] + '</li>';
-
-    }
-    autocomplete_results.style.display = 'block';
-  } else {
-    people_to_show = [];
-    autocomplete_results.innerHTML = '';
-  }
-} */
 
 (function($,window){
 	
@@ -175,9 +134,9 @@ input.onkeyup = function(e) {
 	
 })(jQuery,window)	 
 	
-	autoComplete({inputId:'autocomplete-input', data:JSON.parse(handles)}).init();
+	
 		
-	autoComplete({inputId:'autocompleteInput', data:JSON.parse(handles)}).init();
+	autoComplete({inputId:'autocompleteInput', data:JSON.parse(handles), callback : function(){console.log("hey")}}).init();
 
 	
 
